@@ -1,0 +1,51 @@
+{{> partials/template-start }}
+  <main class="container">
+    <section>
+      <div class="headings">
+        <h1>People</h1>
+        <h2>See the people bellow</h2>
+      </div>
+
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#people}}
+              <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{name}}</td>
+                <td>
+                  <button
+                    data-source="{{id}}"
+                    data-target="#modal"
+                    class="is-inline"
+                  >
+                    Show Details
+                  </button>
+                </td>
+              </tr>
+            {{/people}}
+          </tbody>
+        </table>
+      </figure>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <article>
+      <header>
+        <a href="#close" aria-label="Close" class="close"></a>
+        <span></span>
+      </header>
+      <p></p>
+    </article>
+  </dialog>
+
+  <script src="js/modal.js"></script>
+{{> partials/template-end }}
